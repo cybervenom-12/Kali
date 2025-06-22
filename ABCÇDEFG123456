@@ -1,0 +1,40 @@
+def kali_linux_kur():
+    import os
+    print("\n[+] Kali Linux kurulumu başlatılıyor...\n")
+    os.system("pkg update -y && pkg upgrade -y")
+    os.system("pkg install wget proot -y")
+    os.system("wget https://raw.githubusercontent.com/Hax4us/TermuxBlack/master/install.sh")
+    os.system("chmod +x install.sh")
+    os.system("bash install.sh")
+
+def ana_menu():
+    print("""
+╔════════════════════════════════╗
+║   🐍 CYBERVENOM ANA MENÜ      ║
+╠════════════════════════════════╣
+║ 1 - Kali Linux İndir           ║
+║ 2 - DDOS Aracı                 ║
+║ 3 - Port Tarayıcı              ║
+║ 4 - Whois Sorgu                ║
+║ 5 - Çıkış                      ║
+╚════════════════════════════════╝
+""")
+    secim = input("Seçiminizi girin: ")
+    if secim == "1":
+        kali_linux_kur()
+    elif secim == "2":
+        print("DDOS aracı başlatılıyor...")
+        # ddos_fonksiyonu()
+    elif secim == "3":
+        print("Port tarayıcı başlatılıyor...")
+        # port_scanner()
+    elif secim == "4":
+        print("Whois sorgusu başlatılıyor...")
+        # whois_sorgusu()
+    elif secim == "5":
+        print("Çıkılıyor...")
+        exit()
+    else:
+        print("Geçersiz seçim!")
+
+ana_menu()
